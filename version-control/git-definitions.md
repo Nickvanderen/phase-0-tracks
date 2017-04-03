@@ -18,3 +18,5 @@
 * What is a merge conflict?
 
 	A merge conflict occurs when you add an addition branch into the branch you are already working on making changes you didn't want.
+
+IM MAKING CHANGES TO THIS FILE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
