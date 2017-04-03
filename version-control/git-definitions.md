@@ -4,7 +4,7 @@
 
 * What is version control?  Why is it useful?
 
-	Version control allows for code to be shared from your local machine to remote machines
+	Version control allows for code to be shared from your local machine to remote machines. It allows multiple people to be able to work on a project
 
 * What is a branch and why would you use one?
 
