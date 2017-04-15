@@ -1,3 +1,13 @@
+body {
+    max-width: 960px;
+}
+
+main {
+    width: 75%;
+    float: right;
+    padding-left: .75em;
+}
+
 blockquote {
   border-left: 5px solid blue;
   padding: 15px;
@@ -7,6 +17,11 @@ blockquote {
 cite {
   display: block;
   margin-top: 10px;
+}
+
+#external-links {
+    width: 20%;
+    float: left;
 }
 
 #external-links ul {
@@ -29,4 +44,23 @@ figure {
 figcaption {
   font-style: italic;
   text-align: right;
+}
+
+/** media queries **/
+
+@media screen and (max-width: 550px) {
+    
+  h1 {
+    font-size: 1.25em;
+  }
+    
+    #external-links {
+        width: 100%;
+        float: none;
+    }
+    
+    main {
+        float: left;
+    }
+    
 }
