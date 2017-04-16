@@ -1,0 +1,27 @@
+/* css document */
+
+section {
+    width: 20%;
+    margin: 0 auto;
+}
+
+
+#hat {
+    position: absolute;
+    margin-top: 4em;
+    z-index: 2;
+}
+
+#glasses {
+    position: absolute;
+    z-index: 3;
+    margin-top: 12em;
+    padding: 3.4em;
+}
+
+#octopus {
+    position: absolute;
+    z-index: 1;
+    margin-top: 8em;
+    padding: 1em;
+}
