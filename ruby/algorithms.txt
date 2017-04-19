@@ -1,0 +1,23 @@
+Robot Elevator----------------->
+Enter the elevator with your human and ask “What floor would you like today?”
+If it is a number that corresponds to the options 
+-Press the number of the given integer
+Otherwise 
+	-Ask again
+
+
+Cracking a wheel of Parmigiano Reggiano - The Cheesemonger files------------------------>
+First the 80-90lb wheel usually needs cleaned to remove excess oils and mold spores.
+For each wheel that is oily
+	-until the entire wheel is relatively dry
+-take some paper towels and wipe the entire outside of the cheese until it is relatively dry.
+Then score along the cheese with a knife until there are two distinct halves
+Insert tools into the scores made 	
+	-Until the wheel separates into two large pieces
+Otherwise use opposition to separate the pieces in half
+	-Until the wheel separates
+		-Yell Parm cracked!
+
+
+
+
