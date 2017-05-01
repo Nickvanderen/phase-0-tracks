@@ -16,21 +16,32 @@ fullname = " #{lastname} #{firstname}"
 #take the letters in fullname and advance them one letter
 
   name_change = fullname.split('')
-  name_change.map! { |x| x.next }
+# name_change.map! { |x| x.next }
   new_name = name_change.join('')
-  
-  new_name.gsub('!', ' ')
 
 # Change the vowels in 'aeiou' to the next vowel and do the same for consonants
+new_name.gsub('!', ' ').gsub('a', 'e')
+
+
+new_name.split('')
+new_name.map! { |x| x.next }
+
 
 def vowel_changer
-    vowels = 'aeiou'
+    vowels = "aeiou"
+    
+    if 
+    elsif
+    else
 end
 
 vowel_changer
 
 def consonant_changer
     consonants = 'bcdfghjklmnpqrstvwxyz'
+    if
+    elsif
+    else
 end
 
 consonant_changer
