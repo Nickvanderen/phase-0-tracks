@@ -21,7 +21,19 @@ fullname = " #{lastname} #{firstname}"
   
   new_name.gsub('!', ' ')
 
-# Change the vowels in aeiou to the next vowel and do the same for consonants
+# Change the vowels in 'aeiou' to the next vowel and do the same for consonants
+
+def vowel_changer
+    vowels = 'aeiou'
+end
+
+vowel_changer
+
+def consonant_changer
+    consonants = 'bcdfghjklmnpqrstvwxyz'
+end
+
+consonant_changer
 
 
 # Use a data structure to store the fake names as they are entered. When the user exits the program, iterate through the data structure and print all of the data the user entered. A sentence like "Vussit Gimodoe is actually Felicia Torres" or "Felicia Torres is also known as Vussit Gimodoe" for each agent is fine.
@@ -43,7 +55,7 @@ puts names
 
 
 
-
+=begin
 
 vowels = ["a", "e", "i", "o", "u"]
 consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y" "z"]
@@ -53,3 +65,5 @@ def vowel_changer
 end
 
 vowel_changer
+
+=end
