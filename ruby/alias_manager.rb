@@ -65,7 +65,6 @@ names.delete("quit")
 puts names
 
 
-
 =begin
 
 vowels = ["a", "e", "i", "o", "u"]
