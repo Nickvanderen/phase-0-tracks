@@ -5,11 +5,6 @@
 # I worked on this challenge [by myself, with: ].
 # We spent [#] hours on this challenge.
 
-# EXPLANATION OF require_relative
-# require is used for gems, absolute file paths, 
-# require relative is used for files that are in the same directory 
-
-
 require_relative 'state_data'
 
 class VirusPredictor
@@ -82,6 +77,8 @@ end
   end
 p state
 
+=begin
+
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
 alabama.virus_effects
 
@@ -94,6 +91,23 @@ california.virus_effects
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 alaska.virus_effects
 
+=end
 
 #=======================================================================
 # Reflection Section
+
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+    # The hash syntax with "string" => value stores a different string of data every time, so it's more memory intensive. the hash syntax with symbols (symbolkey: value) stores each symbol once, so it's more efficient.
+
+# What does require_relative do? How is it different from require?
+    # Require is used for gems and absolute file paths...
+    # Require relative is used for files that are in the same directory 
+
+# What are some ways to iterate through a hash?
+    # You can iterate through a hash with a do |key, value|
+
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+
+
+# What concept did you most solidify in this challenge?
+# Iterating through a hash with a .each do method
