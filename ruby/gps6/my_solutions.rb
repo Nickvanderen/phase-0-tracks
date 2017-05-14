@@ -6,18 +6,22 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+# require is used for gems, absolute file paths, 
+# require relative is used for files that are in the same directory 
+
+
 require_relative 'state_data'
 
 class VirusPredictor
 
+#initializes important variables
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+#arguments are population density, population, and state. It feeds these into two existing methods, predicted_deaths and speed_of_spread.
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
@@ -25,6 +29,7 @@ class VirusPredictor
 
   private
 
+#takes in population density, population and state. returns a tiered predicted deaths number, based on a multiple of population.
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -43,6 +48,7 @@ class VirusPredictor
 
   end
 
+#speed of spread is tiered based off of population density, and it returns a speed increment in inverse relationship to population density
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
@@ -71,6 +77,10 @@ end
 # DRIVER CODE
  # initialize VirusPredictor for each state
 
+ STATE_DATA.each do |state_name, pop_info|
+   state = VirusPredictor.new(STATE_DATA[state_name], STATE_DATA[state_name][:population_density],STATE_DATA[state_name][:population])
+  end
+p state
 
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
 alabama.virus_effects
