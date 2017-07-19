@@ -1,65 +1,52 @@
 body {
-  font-family: helvetica;
+   box-sizing: border-box;
+  font-family: Verdana, Helvetica, sans-serif;
+  
 }
 
 header {
-  background-color: goldenrod;
-  text-align: center;
-  padding: 1em; 
-}
-
-article {
-  padding: 1em;
-}
-
-details {
-  margin-left: 1em;
-}
-
-header p {
-  font-weight: bold;
-  color: #f2ebcb;
-}
-
-h1 {
-  color: white;
-}
-
-h2 {
-  color: #FF0080
-}
-
-ul li {
-  list-style-type: square;
-}
-
-
-a:link {
-  color: #7eb5a0;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #c40b43;
-  transition: .8s;
-}
-
-.column-1 {
-  width: 48%;
-  float: left;
-  border-right: 5px solid navy;
-}
-
-.column-2 {
-  width: 48%;
-  float: right;
-}
-
-footer {
-  clear: both;
-  background-color: goldenrod;
-  text-align: center;
-  padding: 1em; 
-  font-weight: bold;
-  color: #f2ebcb;
-}
+  background-color: yellowgreen;
+  padding: 10px;
+  
+ }
+ 
+ h2 {
+   color: olivedrab;
+ }
+ .column-1 {
+   background-color: papayawhip;
+   width: 47%;
+   display: inline-block;
+   padding: 10px;
+  
+ }
+ 
+ footer {
+   text-align: center;
+ 
+ }
+ 
+ .column-2 {
+   background: tomato;
+   width: 47%;
+   display: inline-block;
+   vertical-align: top;
+   padding: 10px;
+   
+ }
+ 
+ a:link,
+ a:visited {
+   color: #000;
+ }
+ 
+ a:hover,
+ a:focus {
+   color: goldenrod;
+ }
+ 
+ 
+  footer{
+   background-color: #00BFFF;
+ }
+ 
