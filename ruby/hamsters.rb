@@ -1,35 +1,38 @@
-def hamsterquestions
-	puts "What is the hamster's name?"
-	hamstername = gets.chomp
-	puts "How loud is the hamster on a scale from 1 to 10?"
-	hamstervolume = gets.chomp.to_i
-	puts "What is the hamster's fur color?"
-	furcolor = gets.chomp
-	puts "Is the hamster a good candidate for adoption? Yes or No?"
-	hamsteradopt = gets.chomp
-	if hamsteradopt == "Yes"
-		hamsteradopt = true
-	else
-		hamsteradopt = false
-	end
-	puts "How old is the hamster?"
-	hamsterage = gets.chomp
-	if hamsterage == ""
-		hamsterage = nil
-	end
+# Hamsters
 
-	puts "Hamster's name: #{hamstername}"
-	puts "Hamster noise level: #{hamstervolume}"
-	puts "Hamster's fur color: #{furcolor}"
-	if hamsteradopt == true
-		puts "This hamster is cleared for adoption!"
-	else
-		puts "Well I guess we have some catfood then."
-	end
-	if hamsterage == nil
-		puts ""
-	else puts hamsterage
-	end
+# Ask for hamster names
 
+# Ask for volume level on a scale from 1 to 10
+
+# Ask fur color
+
+# Ask if hamster is a good candidate for adoption
+
+# Ask for an estimation of age using nil of there is no input
+
+puts "What is the hamsters name?"
+name = gets.chomp
+
+puts "How sqeaky on a scale of 1-10 is this hamster?"
+squeaky = gets.chomp.to_i
+
+puts "What is the fur color of the little buddy?"
+color = gets.chomp
+
+puts "Do you consider this hamster to be a prime candidate for adoption?"
+adoption = gets.chomp.upcase
+
+
+puts "In your estimation what is the age of this creature"
+age = gets.chomp
+
+if age == ""
+  age = nil
 end
-hamsterquestions
+
+if age == nil
+  age = "unknown"
+end
+
+puts "To summerize; We have #{name}, a #{color} hamster that is a #{squeaky} on the squeak scale. We believe that #{name} is around #{age} years old and is the little one adoptable? #{adoption}!"
+
