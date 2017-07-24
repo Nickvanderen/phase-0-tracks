@@ -1,40 +1,74 @@
-#An encrypt method that advances every letter of a string one letter forward. So "abc" would become "bcd". For now, you can assume lowercase input and output. Any space character should remain a space character -- no change made.
+#Secret Agents
 
 
-def encryption
+def encrypt(str)
+
+    char_index = 0 
     
-index = 0
-encyrption = ""
-
-puts "Enter an encyrption key"
-e_key = gets.chomp
-
-while index < e_key.length
-    e_key[index] = e_key[index].next
-  index += 1
+    while char_index < str.length
+    
+    if str[char_index] == "z"
+       str[char_index] = "a"
+    elsif str[char_index] == " "
+          str[char_index] = " "
+    else 
+      str[char_index] = str[char_index].next
     end
-puts e_key
+    char_index += 1
+    end
+  puts "Your new encrpyption is #{str}"
 end
 
-encryption
 
-#A decrypt method that reverses the process above. Note that Ruby doesn't have a built-in method for going backward one letter. How can you find out where a letter is in the alphabet, then access the letter right before it? Hint: In the IRB session above, you learned how to ask a string for the index of a letter. "abcdefghijklmnopqrstuvwxyz" counts as a string.
+#puts encrypt("abc") #bcd
+#puts encrypt("zed") #afe
 
-def decryption
-
-index = 0
-alphabet = "abcdefghijklmnopqrstuvwxyz"
-
-puts "Enter a decryption key"
-d_key = gets.chomp
-
-while index < d_key.length
-    d_key[index] = alphabet.d_key[index] -1
-    index += 1
-    end
+def decrypt(str)
+  
+  char_index = 0
+  
+  while char_index < str.length
+  
+  if str[char_index] == " "
+     str[char_index] = " "
+  else
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    letter = str[char_index]
+    alphabet_char = alphabet.index(letter)
+    previous_char = alphabet_char - 1
+    str[char_index] = alphabet[previous_char]
+  end
+    char_index += 1
+  end
+  puts "The decryption is #{str}"
 end
 
-decryption
+
+#puts decrypt("bcd") #abc
+#puts decrypt("afe") #zed
+
+
+
+
+puts "Thank you for using ScramblerApp 5000, select E to encrypt, or D to decrypt"
+user_input = gets.chomp
+
+
+  if user_input == "E" 
+    puts "Please enter a password to ENCRYPT"
+    password = gets.chomp
+    puts encrypt(password)
+
+  elsif user_input == "D" 
+    puts "Please enter a password to DECRYPT"
+    password = gets.chomp
+    puts decrypt(password)
+
+  else
+    puts "INPUT ERROR!"
+end
+
+
 
 
 
