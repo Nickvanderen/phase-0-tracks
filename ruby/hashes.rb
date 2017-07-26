@@ -9,7 +9,8 @@ kids
 decor
 =end
 
-#Prompt the designer for information about the client
+# Prompt the designer for information about the client
+# ruby hashes.rb
 
 puts "Enter clients name"
     name = gets.chomp
@@ -42,16 +43,24 @@ p client
 
 # Ask what is the new piece of information they want to change
 
-puts "What information do you need to update? If you need to skip it, type 'none'"
-changes = gets.chomp.to_sym
-if changes == "none"
-    puts "Thank you. Client specs complete"
-else puts "Update your answer for #{changes}"
+# ruby hashes.rb
+
+puts "Does the user need to update their information?"
+user_input = gets.chomp
+
+if user_input == "yes"
+    puts "What information do you need to update?"
+    changes = gets.chomp.to_sym
+    
+    puts "Update your answer for #{changes}"
     client[changes] = gets.chomp
-    p client
-    puts "Changes have been added. Thank you."
+    puts "Changes have made added. Thank you!"
+    
+    puts client
+
+else user_input == "no"
+    puts "Thank you, client specs complete."
+    
 end
-
-
 
 
