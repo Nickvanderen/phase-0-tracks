@@ -35,7 +35,11 @@ client = {
     decor: "#{decor}"
 }
 
-p client
+def display_client(client_info)
+  
+  client_info.each {|client_key, client_value | puts "#{client_key} - #{client_value}"}
+    
+end
 
 # Making updates
 
@@ -56,10 +60,12 @@ if user_input == "yes"
     client[changes] = gets.chomp
     puts "Changes have made added. Thank you!"
     
-    puts client
+    display_client(client)
 
 else user_input == "no"
     puts "Thank you, client specs complete."
+    
+    display_client(client)
     
 end
 
