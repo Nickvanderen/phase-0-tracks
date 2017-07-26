@@ -1,4 +1,5 @@
 # Array - iterating through an array with .each 
+# ruby iteration.rb
 
 reptiles = reptiles = [
     "iguana",
