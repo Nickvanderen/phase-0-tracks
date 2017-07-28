@@ -1,79 +1,32 @@
-# Spy Name
+# Alias manager
 
-# Ask user for spy first and lastname
+# ruby alias_manager.rb
 
-puts "Please enter your firstname"
-  firstname = gets.chomp
-  
-puts "Now your lastname please."
-  lastname = gets.chomp
-  
-fullname = " #{lastname} #{firstname}"
-  puts "Welcome,#{fullname}"
+name = "Felica Torres"
 
-# Change the letters somehow
+name.chars
 
-#take the letters in fullname and advance them one letter
+name_break = name.split()
 
-  name_change = fullname.split('')
-# name_change.map! { |x| x.next }
-  new_name = name_change.join('')
+first_name = name_break[0]
+last_name = name_break[1]
 
-# Change the vowels in 'aeiou' to the next vowel and do the same for consonants
-new_name.gsub('!', ' ').gsub('a', 'e')
+# swap first and last name
+name_swap = last_name + " " + first_name
 
-
-new_name.split('')
-new_name.map! { |x| x.next }
-
-
-def vowel_changer
-    vowels = "aeiou"
-    
-    if 
-    elsif
-    else
+# change vowels to the next vowel
+def next_vowel(alias_name)
 end
 
-vowel_changer
+next_vowel(alias_name)
 
-def consonant_changer
-    consonants = 'bcdfghjklmnpqrstvwxyz'
-    if
-    elsif
-    else
+
+# change consonants to the next consonant 
+def next_consonant(alias_name)
 end
 
-consonant_changer
+next_consonant(alias_name))
 
 
-# Use a data structure to store the fake names as they are entered. When the user exits the program, iterate through the data structure and print all of the data the user entered. A sentence like "Vussit Gimodoe is actually Felicia Torres" or "Felicia Torres is also known as Vussit Gimodoe" for each agent is fine.
+# edge cases swap back to the fist in their respective cateogry
 
-names = []
-
-loop do 
-  puts "Please enter a name, when you're done type 'quit"
-  name = gets.chomp
-
-  names.push(name)
-  spy_name = name.gsub!(/[alm]/, 't')
-  break if name == "quit"
-end
-
-
-names.delete("quit")
-puts names
-
-
-=begin
-
-vowels = ["a", "e", "i", "o", "u"]
-consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y" "z"]
-
-def vowel_changer
-    if fullname
-end
-
-vowel_changer
-
-=end
