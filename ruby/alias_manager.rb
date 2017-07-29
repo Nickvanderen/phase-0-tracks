@@ -1,79 +1,115 @@
-# Spy Name
+# Alias manager
 
-# Ask user for spy first and lastname
+# ruby alias_manager.rb
 
-puts "Please enter your firstname"
-  firstname = gets.chomp
-  
-puts "Now your lastname please."
-  lastname = gets.chomp
-  
-fullname = " #{lastname} #{firstname}"
-  puts "Welcome,#{fullname}"
+=begin
 
-# Change the letters somehow
-
-#take the letters in fullname and advance them one letter
-
-  name_change = fullname.split('')
-# name_change.map! { |x| x.next }
-  new_name = name_change.join('')
-
-# Change the vowels in 'aeiou' to the next vowel and do the same for consonants
-new_name.gsub('!', ' ').gsub('a', 'e')
-
-
-new_name.split('')
-new_name.map! { |x| x.next }
-
-
-def vowel_changer
+def vowel_changer(letter)
     vowels = "aeiou"
     
-    if 
-    elsif
+    if letter == "u"
+        edge_case_vowel = "a"
     else
+        vowel_index = vowels.index(letter)
+        next_vowel = vowel[vowel_index.next]
+    end
 end
-
-vowel_changer
-
-def consonant_changer
-    consonants = 'bcdfghjklmnpqrstvwxyz'
-    if
-    elsif
+    
+    
+def consonant_changer(letter)
+    consonants = "bcdfghjklmnpqrstvwxyz"
+    
+    if letter == "z"
+        edge_case_consonant = "b"
     else
+        consonant_index = consonants.index(letter)
+        next_consonant = consonants[consonant_index.next]
+    end
+        
+end
+=end
+
+alias_hash = {}
+
+puts "Please enter an agents name."
+name = gets.chomp.
+alias_name = "SD934j"
+
+name.chars
+
+name_break = name.split()
+
+first_name = name_break[0]
+last_name = name_break[1]
+
+# swap first and last name
+name_swap = last_name + " " + first_name
+
+
+
+alias_hash[name] = alias_name
+
+def display_alias(alias_name)
+    
+  alias_name.each {|name, alias_name| puts "#{alias_name} is actually, #{name}."}
+    
 end
 
-consonant_changer
-
-
-# Use a data structure to store the fake names as they are entered. When the user exits the program, iterate through the data structure and print all of the data the user entered. A sentence like "Vussit Gimodoe is actually Felicia Torres" or "Felicia Torres is also known as Vussit Gimodoe" for each agent is fine.
-
-names = []
-
-loop do 
-  puts "Please enter a name, when you're done type 'quit"
-  name = gets.chomp
-
-  names.push(name)
-  spy_name = name.gsub!(/[alm]/, 't')
-  break if name == "quit"
-end
-
-
-names.delete("quit")
-puts names
+display_alias(alias_hash)
 
 
 =begin
 
-vowels = ["a", "e", "i", "o", "u"]
-consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y" "z"]
+p name = "Robert Butte"
 
-def vowel_changer
-    if fullname
+p new_name = name.gsub(/o/, "u")
+
+p new_name.gsub(/e/, "i")
+
+name = "Robert Butte"
+
+index = 0
+vowels = "aeiou"
+
+p vowels[index+1]
+
+if name[index] = has_vowels
+    name[next_vowels]
 end
 
-vowel_changer
+# Alias hash that outputs name and alias
+
+
+
+name = "Felica Torres"
+
+name.chars
+
+name_break = name.split()
+
+first_name = name_break[0]
+last_name = name_break[1]
+
+# swap first and last name
+name_swap = last_name + " " + first_name
+
+# change vowels to the next vowel
+
+def next_vowel(alias_name)
+    
+    index = 0
+    
+   # name_swap = "Felica Torres"
+    
+   # vowels = "aeiou"
+    
+   # p next_vowel = vowels[index+1]
+    
+   # p isolate = name_swap[next_vowel]
+    
+   # puts alias_name
+end
+
+next_vowel(name_swap)
 
 =end
