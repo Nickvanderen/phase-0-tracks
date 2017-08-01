@@ -1,4 +1,6 @@
-# Santa.rb
+# ruby santa.rb
+
+=begin
 class Santa
   
     attr_reader :ethnicity, :age
@@ -72,13 +74,13 @@ santa.celebrate_birthday
 santa.get_mad_at("Dancer")
 santa.gender = "quad-gender"
 
-
 250.times do
-	santa = Santa.new(genders_list.sample, ethnicity_list.sample, rand(0-140))
+	santa = Santa.new(example_genders.sample, example_ethnicities.sample, rand(0-140))
 	puts santa.gender
 	puts santa.ethnicity
 	puts santa.age
 end
+=end
 
 
 

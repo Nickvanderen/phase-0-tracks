@@ -58,7 +58,7 @@ if user_input == "yes"
     
     puts "Update your answer for #{changes}"
     client[changes] = gets.chomp
-    puts "Changes have made added. Thank you!"
+    puts "Changes have been added. Thank you!"
     
     display_client(client)
 
