@@ -1,5 +1,48 @@
 # ruby santa.rb
 
+
+class Santa
+    def initialize(gender, ethnicity)
+        puts "Initializing Santa instance"
+        puts "------"
+        @gender = gender
+        @ethnicity = ethnicity
+        reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+        @age = 0
+    end
+    
+    def speak
+        puts "Ho, ho, ho! Haaaaaaaapy holidays!"
+    end
+    
+    def eat_milk_and_cookies(cookie)
+        puts "That was a good #{cookie} cookie!"
+    end
+end
+
+a_santa = Santa.new
+
+a_santa.speak
+a_santa.eat_milk_and_cookies("gingerbread")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 =begin
 class Santa
   
