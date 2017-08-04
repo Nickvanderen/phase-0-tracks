@@ -1,114 +1,98 @@
 # Method to create a list
+# ruby grocery_list.rb
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
+=begin
+    input string outpust hash
+    take arg of grocery item, the amount
+    divide string into indivdual grocery items
+    iterate over the array
+    desired outcome ex grocery_list = {"Carrots" => 2 ,"Apples" => 2,}
+=end
 # steps: 
   # [fill in any steps here]
   # set default quantity
   # print the list to the console [can you use one of your other methods here?]
 # output: [what data type goes here, array or hash?]
 
-list = {}
 
-def grocery_list(items, amount=1)
+def create_list(items)
     
-    list = {}
+    grocery_list = {}
     
-    groceries = items.split(' ')
+    grocery_items = items.split()
     
-    groceries.each do |item|
-        list[item] = amount
+    grocery_items.each do |items|
+        grocery_list[items] = 0
     end
-    
-    list
-    
+    grocery_list
 end
+
+#create_list("carrots apples cereal pizza")
+
+new_list = create_list("carrots apples cereal pizza")
 
 # Method to add an item to a list
 # input: list, item name, and optional quantity
 # steps:
+=begin
+    argument of item_name optional quantity
+    new item gets stored into the grocery list hash
+    desired outcome grocery_list = new list item old list items
+=end
 # output:
 
-new_list = grocery_list("Lemonade Tomatoes Onions Ice-cream")
-
-def add_item(new_list, item, quantity=0)
-  
-    new_list[item] = quantity
+def add_item(new_list, item_name, quantity=1)
     
-    new_list
+    new_list[item_name] = quantity
+    
 end
 
-p add_item(new_list, "Lemonade", 2)
-p add_item(new_list, "Tomatoes", 3)
-p add_item(new_list, "Ice-cream", 4)
-p add_item(new_list, "Onions", 1)
+add_item(new_list, "Oranges")
+
+new_list
 
 # Method to remove an item from the list
 # input:
+=begin
+    remove item arguments item_name new_list
+    remove item from new list
+    output new list with removed item
+=end
 # steps:
 # output:
 
-def remove_item(new_list, item)
-    
-    new_list.delete(item)
-    
-    new_list
+def remove_item(new_list, item_name)
+    new_list.delete(item_name)
 end
 
-remove_item(new_list, "Lemonade")
+remove_item(new_list, "apples")
 
-p new_list
+new_list
 
 # Method to update the quantity of an item
-# input:
-# steps:
-# output:
+# input: new_list, item_name, quantity
+# steps: accessing the item_name IN new list to change quantity
+# output: new list with updated quantity for particular item
 
-def update_it(new_list, item, amount)
+def update_quantity(new_list, item_name, quantity)
     
-    new_list[item] = amount
-    
-    new_list
+    new_list[item_name] = quantity
 end
 
-update_it(new_list, "Ice-cream", 1)
+update_quantity(new_list, "pizza", 20)
 
-p new_list
+new_list
 
 # Method to print a list and make it look pretty
 # input:
 # steps:
 # output:
 
-def print_pretty(new_list)
-    puts "Grocery List:"
-    new_list.each do |item, amount|
-        
-    puts "#{item}: #{amount}"
-  end
+def print_groceries(groceries)
+
+groceries.each {|item, quantity| puts "#{item} --- #{quantity}"}
+    
 end
     
-print_pretty(new_list)
-
-=begin
-
-What did you learn about pseudocode from working on this challenge?
-What are the tradeoffs of using arrays and hashes for this challenge?
-What does a method return?
-What kind of things can you pass into methods as arguments?
-How can you pass information between methods?
-What concepts were solidified in this challenge, and what concepts are still confusing?
-
-
-=end
-
-
-
-
-
-
-
-
-
-
-
-
+print_groceries(new_list)
 
