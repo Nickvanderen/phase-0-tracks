@@ -1,10 +1,11 @@
+# ruby shout.rb
+
 module Shout
     def shouting(battle_cry)
         puts "Blorrgraahhhs!!" + (battle_cry)
     end
 end
 
-    
 class Orc
     include Shout
 end
