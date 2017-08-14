@@ -1,3 +1,5 @@
+=begin
+
 # One user can enter a word (or phrase, if you would like your game to support that), and another user attempts to guess the word.
 
 puts "Player one enter a word"
@@ -109,6 +111,36 @@ end
 
 =end
 
+loop do 
+  
+puts "Guess a letter!"
+user_input = gets.chomp
+
+array = ["a","p","e"]
+guesses = 6
+
+i = 0
+while i < array.length
+
+array.length.times do |i|
+end
+
+if user_input == # a letter in the secret_word array then print it and guess again 
+  puts "You got one!"
+  puts "Guess another"
+  user_input = gets.chomp
+elsif
+  user_input == # a letter already guess print a notice and guess again
+elsif
+  user_input != # a letter in the secret_word array print what you have and guessed_letters array
+else
+  guesses  == 0 # player has no more guesses left print GAME OVER
+end
+
+  i += 1
+
+end
+end
 
 
 
