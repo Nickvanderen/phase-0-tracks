@@ -1,0 +1,85 @@
+// SECTION 8.3 ONE TO MANY RELATIONSHIPS
+
+sqlite3 cheeses.db
+
+CREATE TABLE cheese (id INTEGER PRIMARY KEY, name VARCHAR (255),region VARCHAR (255), type_of_cheese INT, FOREIGN KEY (type_of_cheese) REFERENCES types(id));
+
+CREATE TABLE types (id INTEGER PRIMARY KEY, type_of_cheese);
+
+INSERT INTO types (type_of_cheese) VALUES ("Brie");
+INSERT INTO types (type_of_cheese) VALUES ("Blue");
+INSERT INTO types (type_of_cheese) VALUES ("Aged");
+
+INSERT INTO cheese (name, region, type_of_cheese) VALUES ("Comte", "France", 3);
+
+INSERT INTO cheese (name, region, type_of_cheese) VALUES ("Rogue River", "Oregon", 2);
+
+INSERT INTO cheese (name, region ,type_of_cheese) VALUES ("La Tur", "Italy", 1);
+
+// NEW ENTRIES
+
+INSERT INTO cheese (name, region, type_of_cheese) VALUES ("Gorgonzola Dolce", "Italy", 2);
+
+INSERT INTO cheese (name, region, type_of_cheese) VALUES ("Roomano", "Holland", 3);
+
+INSERT INTO cheese (name, region, type_of_cheese) VALUES ("Roomano", "Holland", 3);
+
+INSERT INTO cheese (name, region, type_of_cheese) VALUES ("Delice de Bourgogne", "France", 1);
+
+// QUERIES
+
+SELECT * FROM cheese;
+
+1|Comte|France|3
+2|Rogue River|Oregon|2
+3|La Tur|Italy|1
+4|Gorgonzola Dolce|Italy|2
+5|Roomano|Holland|3
+6|Roomano|Holland|3
+7|Delice de Bourgogne|France|1
+
+SELECT * FROM types;
+
+1|Brie
+2|Blue
+3|Aged
+
+SELECT * FROM cheese, types WHERE cheese.type_of_cheese = types.id;
+
+SELECT cheese.name, types.type_of_cheese FROM cheese JOIN types ON cheese.type_of_cheese = types.id;
+
+Comte|Aged
+Rogue River|Blue
+La Tur|Brie
+Gorgonzola Dolce|Blue
+Roomano|Aged
+Roomano|Aged
+Delice de Bourgogne|Brie
+
+DELETE FROM cheese WHERE name="Roomano";
+
+1|Comte|France|3
+2|Rogue River|Oregon|2
+3|La Tur|Italy|1
+4|Gorgonzola Dolce|Italy|2
+7|Delice de Bourgogne|France|1
+
+UPDATE cheese SET region="French Alps" WHERE name="Comte";
+
+SELECT * FROM cheese INNER JOIN types;
+
+1|Comte|French Alps|3|1|Brie
+1|Comte|French Alps|3|2|Blue
+1|Comte|French Alps|3|3|Aged
+2|Rogue River|Oregon|2|1|Brie
+2|Rogue River|Oregon|2|2|Blue
+2|Rogue River|Oregon|2|3|Aged
+3|La Tur|Italy|1|1|Brie
+3|La Tur|Italy|1|2|Blue
+3|La Tur|Italy|1|3|Aged
+4|Gorgonzola Dolce|Italy|2|1|Brie
+4|Gorgonzola Dolce|Italy|2|2|Blue
+4|Gorgonzola Dolce|Italy|2|3|Aged
+7|Delice de Bourgogne|France|1|1|Brie
+7|Delice de Bourgogne|France|1|2|Blue
+7|Delice de Bourgogne|France|1|3|Aged
