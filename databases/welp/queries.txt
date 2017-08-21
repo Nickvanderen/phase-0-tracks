@@ -1,0 +1,58 @@
+// SECTION 8.4 MANY TO MANY 
+
+sqlite3 welp.db
+
+CREATE TABLE businesses (id INTEGER PRIMARY KEY, name VARCHAR (255));
+
+INSERT INTO businesses (name) VALUES ("Crumpet World");
+INSERT INTO businesses (name) VALUES ("Office Dupont");
+INSERT INTO businesses (name) VALUES ("Bill's Beepers");
+INSERT INTO businesses (name) VALUES ("Guacamole Hut");
+
+CREATE TABLE users (id INTEGER PRIMARY KEY, firstname VARCHAR (255), lastname VARCHAR (255));
+
+INSERT INTO users (firstname, lastname) VALUES ("Ralph", "Finess");
+
+INSERT INTO users (firstname, lastname) VALUES ("Sally", "Ipsum");
+
+INSERT INTO users (firstname, lastname) VALUES ("Lorn", "Laufer");
+
+INSERT INTO users (firstname, lastname) VALUES ("Holly", "Flax");
+
+CREATE TABLE reviews (
+	id INTEGER PRIMARY KEY, 
+	stars INT, 
+	comment VARCHAR(255), 
+	business_id INT, 
+	user_id INT, 
+	FOREIGN KEY (user_id) REFERENCES users(id), 
+	FOREIGN KEY (business_id) REFERENCES businesses(id)
+);
+
+CREATE TABLE reviews (id INTEGER PRIMARY KEY, stars INT, comment VARCHAR(255), business_id INT, user_id INT, FOREIGN KEY (business_id) REFERENCES businesses(id),  FOREIGN KEY (user_id)REFERENCES users(id));
+
+INSERT INTO reviews (stars, comment, business_id, user_id) VALUES (5, "Great service!", 2, 1);
+
+INSERT INTO reviews (stars, comment, business_id, user_id) VALUES (5, "Best tacos in town!", 4, 4);
+
+INSERT INTO reviews (stars, comment, business_id, user_id) VALUES (2, "Bill is creepy", 3, 2);
+
+INSERT INTO reviews (stars, comment, business_id, user_id) VALUES (3, "Too much like Office Depot", 2, 3);
+
+SELECT users.firstname, users.lastname, businesses.name, reviews.stars, reviews.comment FROM users, businesses, reviews WHERE reviews.user_id = users.id AND reviews.business_id = businesses.id;
+
+Ralph|Finess|Office Dupont|5|Great service!
+Holly|Flax|Guacamole Hut|5|Best tacos in town!
+Sally|Ipsum|Bill's Beepers|2|Bill is creepy
+Lorn|Laufer|Office Dupont|3|Too much like Office Depot
+
+SELECT * FROM users, businesses, reviews WHERE reviews.user_id = users.id AND reviews.business_id = businesses.id AND name="Guacamole Hut";
+
+4|Holly|Flax|4|Guacamole Hut|2|5|Best tacos in town!|4|4
+
+SELECT * FROM reviews, businesses, users WHERE reviews.business_id = businesses.id AND reviews.user_id = users.id;
+
+1|5|Great service!|2|1|2|Office Dupont|1|Ralph|Finess
+2|5|Best tacos in town!|4|4|4|Guacamole Hut|4|Holly|Flax
+3|2|Bill is creepy|3|2|3|Bill's Beepers|2|Sally|Ipsum
+4|3|Too much like Office Depot|2|3|2|Office Dupont|3|Lorn|Laufer
