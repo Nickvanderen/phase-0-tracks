@@ -1,0 +1,9 @@
+body {
+	width: 50%;
+	margin: 0 auto;
+}
+
+img {
+	border: 5px solid #FFF;
+	padding: .5em;
+}
