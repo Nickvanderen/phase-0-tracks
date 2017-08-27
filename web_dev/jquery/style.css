@@ -1,0 +1,21 @@
+/* css document */
+
+#wrapper {
+	width: 60%;
+	margin: 0 auto;
+}
+
+#hero-photo {
+	text-align: center;
+	border: 5px solid #000;
+	padding: 1.2em;
+	display: none;
+}
+
+h1 {
+	display: none;
+}
+
+#about {
+	display: none;
+}

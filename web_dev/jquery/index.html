@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Practice</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<section id="wrapper">
+	<header>
+		<h1>Cutthroat Shipping</h1>
+		<h2>Yer booty is safe with us...</h2>
+	</header>
+	<nav id="main-nav">
+		<li><a href="javascript:;">Home</a></li>
+		<li><a href="javascript:;">About</a></li>
+		<li><a href="javascript:;">Products</a></li>
+		<li><a href="javascript:;">Services</a></li>
+		<li><a href="javascript:;">Contact</a></li>
+	</nav>
+	<article id="about">
+		<p>Raclette snackwave forage hashtag, tote bag tattooed fixie cloud bread street art portland literally air plant banh mi. Cornhole wolf locavore literally, raw denim brunch ethical tacos. <em>Kombucha heirloom</em> vegan kogi wayfarers la croix freegan glossier chambray green juice chia drinking vinegar hammock. Church-key selvage chillwave hammock, +1 fanny pack 8-bit banjo taiyaki single-origin coffee man braid food truck pop-up snackwave. Cornhole cronut poke af lo-fi paleo prism letterpress pabst.</p>
+	</article>
+	<article id="hero-photo">
+		<img class="photo" src="pirate.jpg" alt="pirate warning">
+	</article>
+	<button class="button">Products</button>
+	<article id="products">
+		<p>Portland taiyaki raw denim XOXO, semiotics live-edge meditation yuccie mumblecore church-key tattooed. Single-origin coffee chartreuse taxidermy fixie shabby chic wolf, plaid af retro. Beard iPhone williamsburg green juice cliche. Mustache activated <a href="javascript:;">charcoal thundercats plaid</a> ugh. Tbh thundercats VHS, keytar viral etsy forage waistcoat migas disrupt cronut photo booth food truck. Flannel YOLO plaid, adaptogen occupy quinoa narwhal hell of. Organic craft beer schlitz, pickled cardigan cornhole mixtape chillwave blue bottle marfa. Post-ironic squid wolf, franzen next level vice ennui chambray tofu ramps messenger bag edison bulb ethical banjo. Ugh vegan fixie synth next level chia.</p>
+	</article>
+	<footer>
+		<p>&copy; Company 2017 - Created by Vandelay Industries</p>
+	</footer>
+</section><!-- end wrapper -->
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('h1').fadeIn(3000);
+
+		$('#about').slideDown();
+
+		$('button').click(function() {
+			$('#products').slideToggle();
+		});
+
+		$('#hero-photo').slideDown().delay(800).fadeIn(5000);
+	}); 
+</script><!-- end jquery -->
+</body>
+</html>
